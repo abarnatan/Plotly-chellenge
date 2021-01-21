@@ -56,7 +56,7 @@ function getPlots(id) {
 
         };
     // set the layout for the bubble chart
-        var layout_2 = {
+        var layout2 = {
             xaxis:{title: "OTU ID"},
             height: 600,
             width: 1000
@@ -66,7 +66,7 @@ function getPlots(id) {
         var data1 = [trace1];
 
     // plot the bubble chart
-        Plotly.newPlot("bubble", data1, layout_2); 
+        Plotly.newPlot("bubble", data1, layout2); 
 
     });
 }  
@@ -90,4 +90,10 @@ function getDemoInfo(id) {
                 demographicInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
         });
     });
+}
+
+// create function for the change of id
+function idChanged(id) {
+    getPlots(id);
+    getDemoInfo(id);
 }
