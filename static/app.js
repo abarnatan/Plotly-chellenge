@@ -70,3 +70,11 @@ function getPlots(id) {
 
     });
 }  
+// function to pull in data
+function getDemoInfo(id) {
+    // read the json file to get data
+        d3.json("samples.json").then((data)=> {
+    // get metadata info for the demographic panel
+            var metadata = data.metadata;
+    
+            console.log(metadata)
