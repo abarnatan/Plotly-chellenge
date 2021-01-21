@@ -27,7 +27,7 @@ function getPlots(id) {
             };  
          // create data variable
             var data = [trace];
-        // create layout variable to set plots layout
+        // create layout variable to set chart layout
             var layout = {
                 title: "Top 10 OTU",
                 yaxis:{
@@ -40,7 +40,7 @@ function getPlots(id) {
                     b: 30
                 }
         };
-     // create the bar plot
+     // create the bar chart
         Plotly.newPlot("bar", data, layout);
         });
     }
