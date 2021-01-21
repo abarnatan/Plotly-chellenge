@@ -55,13 +55,18 @@ function getPlots(id) {
         text:  sampledata.samples[0].otu_labels
 
         };
-    // set the layout for the bubble plot
+    // set the layout for the bubble chart
         var layout_2 = {
             xaxis:{title: "OTU ID"},
             height: 600,
             width: 1000
         };
+        
+    // creating data variable 
+        var data1 = [trace1];
 
+    // plot the bubble chart
+        Plotly.newPlot("bubble", data1, layout_2); 
 
-        });
-    }
+    });
+}  
