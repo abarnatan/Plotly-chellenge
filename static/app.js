@@ -83,3 +83,5 @@ function getDemoInfo(id) {
             var result = metadata.filter(meta => meta.id.toString() === id)[0];
         // select the demographic panel to output data
             var demographicInfo = d3.select("#sample-metadata");
+        // delete the demographic info panel to update with new id
+            demographicInfo.html("");
