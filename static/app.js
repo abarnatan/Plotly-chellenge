@@ -93,7 +93,29 @@ function getDemoInfo(id) {
 }
 
 // create function for the change of id
-function idChanged(id) {
+function optionChanged(id) {
     getPlots(id);
     getDemoInfo(id);
 }
+
+// create  function to start data processing
+function init() {
+    // select the dropdown menu 
+    var dropdown = d3.select("#selDataset");
+
+    // read the data 
+    d3.json("samples.json").then((data)=> {
+        console.log(data)
+
+        // get the id data to the dropdwown menu
+        data.names.forEach(function(name) {
+            dropdown.append("option").text(name).property("value");
+        });
+
+        // call the functions to display the data and the plots to the page
+        getPlots(data.names[0]);
+        getDemoInfo(data.names[0]);
+    });
+}
+
+init();
